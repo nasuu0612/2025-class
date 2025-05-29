@@ -2,16 +2,27 @@
 <html>
 
 <head>
-	<title>Click Number</title>
-	<meta charset="UTF-8" />
+    <title>Click Number</title>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-	<div id="main">
-	</div>
+    <div id="main">
+        <div id="titleScreen">
+            <h1>Click Number</h1>
+            <p>順番に数字をクリックしよう！</p>
+            <button id="startButton" onclick="start()">Start Game</button>
+        </div>
+        <div id="gameScreen"></div>
+        <div id="endScreen">
+            <h1>Congratulations!</h1>
+            <p>You clicked all the numbers in order!</p>
+            <button id="endButton" onclick="init()">Play Again</button>
+        </div>
+    </div>
 
-	<script src="js/scripts.js" ></script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

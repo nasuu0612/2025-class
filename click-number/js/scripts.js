@@ -3,6 +3,10 @@ const titleScreen = document.getElementById("titleScreen");
 const gameScreen = document.getElementById("gameScreen");
 const endScreen = document.getElementById("endScreen");
 
+//windowサイズを取得
+const windowWidth = parseInt(window.innerWidth);
+const windowHeight = parseInt(window.innerHeight);
+
 init();
 
 function init() {
@@ -26,6 +30,7 @@ function end() {
 }
 
 const buttonNumber = 9;
+const circleSize = 60;
 function gameStart() {
     for (var num = buttonNumber; num > 0; num--) {
         var elm = document.createElement("button");
@@ -36,11 +41,11 @@ function gameStart() {
         elm.setAttribute("onclick", function_name);
         gameScreen.appendChild(elm);
 
-        var left_pos = 10;
-        var top_pos = 100;
+        var left_pos = circleSize;
+        var top_pos = circleSize;
 
-        left_pos = left_pos + Math.floor(Math.random() * 400);
-        top_pos = top_pos + Math.floor(Math.random() * 600);
+        left_pos = left_pos + Math.floor(Math.random() * (windowWidth-(left_pos*2)));
+        top_pos = top_pos + Math.floor(Math.random() * (windowHeight-(top_pos*2)));
 
         document.getElementById(num).style.left = "" + left_pos + "px";
         document.getElementById(num).style.top = "" + top_pos + "px";
